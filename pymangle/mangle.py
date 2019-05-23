@@ -56,6 +56,9 @@ class Mangle(_mangle.Mangle):
         else:
             verb=0
         super(Mangle,self).__init__(filename,verb)
+        
+    def __reduce__(self):
+        (self.__class__, (), self.filename, self.verbose)
 
     def read_weights(self, weightfile):
         """
